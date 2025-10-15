@@ -174,7 +174,7 @@ body img {
   flex-direction: row;
   background: inherit;
   width: 100%;
-  height: 50px;
+  height: 49px;
   padding-inline: 1rem;
   border-bottom: 1px solid hsl(240, 4%, 14%);
   transition: background 0.2s ease;
@@ -190,4 +190,92 @@ body img {
 .channel-tabs .channel-name i {
   color: lightgray;
   font-size: 0.9rem;
+}
+
+.main-chat {
+  position: relative;
+  flex: 1;
+  background: hsl(240, 7%, 11%);
+}
+.main-chat .topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  position: sticky;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid hsl(240, 4%, 14%);
+  padding-inline: 1rem;
+}
+.main-chat .topbar .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.62rem;
+}
+.main-chat .topbar .left i {
+  color: hsl(300, 1%, 66%);
+  font-size: 1rem;
+}
+.main-chat .topbar .left .channel-tab-name {
+  color: hsl(0, 0%, 98%);
+  font-family: "gg sans Medium", sans-serif;
+  font-size: 0.97rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main-chat .topbar .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+.main-chat .topbar .right i {
+  color: hsl(247, 4%, 60%);
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+.main-chat .topbar .right i:hover {
+  color: hsl(253, 6%, 68%);
+  transition: color 0.2s ease;
+}
+.main-chat .topbar .right i.fa-reel {
+  transform: rotate(45deg);
+}
+.main-chat .topbar .right .search {
+  position: relative;
+}
+.main-chat .topbar .right .search input {
+  font-family: "gg sans Medium", sans-serif !important;
+  width: 240px;
+  border: 1px solid hsl(240, 6%, 20%);
+  background: hsl(240, 9%, 10%);
+  border-radius: 0.55rem;
+  padding: 0.4rem 0.5rem;
+  outline: none;
+  color: hsl(0, 0%, 98%);
+}
+.main-chat .topbar .right .search input::-moz-placeholder {
+  color: hsl(247, 5%, 38%);
+}
+.main-chat .topbar .right .search input::placeholder {
+  color: hsl(247, 5%, 38%);
+}
+.main-chat .topbar .right .search input[type=search]::-webkit-search-decoration,
+.main-chat .topbar .right .search input[type=search]::-webkit-search-cancel-button,
+.main-chat .topbar .right .search input[type=search]::-webkit-search-results-button,
+.main-chat .topbar .right .search input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+.main-chat .topbar .right .search i {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
 }/*# sourceMappingURL=main.css.map */
