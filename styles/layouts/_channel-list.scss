@@ -1,0 +1,100 @@
+.channel-list {
+  @include flex(start, center, column);
+  @include hideScroll;
+  gap: .6rem;
+  padding-block: .6rem;
+  width: 70px;
+  height: 100%;
+  background: $bg-1;
+  border-right: 1px solid $border;
+
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .devider {
+    display: block;
+    width: 50%;
+    min-height: 1px;
+    background: $border;
+  }
+  
+  .channel {
+    position: relative;
+    @include flex;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 3px;
+      border-radius: 0 .6rem .6rem 0;
+      height: 7px;
+      transition: height .2s ease;
+    }
+
+    &.add-channel::before,
+    &.explore::before {
+      content: none;
+    }
+
+    &.selected::before,
+    &.notifications::before {
+      background: $white;
+    }
+
+    &.selected::before {
+      height: 100%;
+    }
+
+    &.notifications::before {
+      height: 7px;
+    }
+
+    &.hovered::before {
+      background: $white;
+      height: 50%;
+    }
+
+    &.private-messages.selected .channel-icon {
+      background: hsl(235, 86%, 65%);
+      transition: background .2s ease;
+    }
+    
+    &.private-messages .channel-icon,
+    &.add-channel .channel-icon,
+    &.explore .channel-icon {
+      transition: background .2s ease;
+
+      &:hover {
+        background: hsl(235, 86%, 65%);
+        transition: background .2s ease;
+      }
+    }
+
+    .channel-icon {
+      position: relative;
+      @include flex;
+      aspect-ratio: 1;
+      width: 55%;
+      border-radius: .7rem;
+      background: hsl(240, 2%, 12%);
+      cursor: pointer;
+
+      i {
+        @include flex;
+        color: $white;
+
+        &.fa-discord {
+          font-size: 1.2rem;
+        }
+
+        &.fa-circle-plus,
+        &.fa-compass {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}

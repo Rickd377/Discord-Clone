@@ -1,0 +1,138 @@
+@import url("https://fonts.cdnfonts.com/css/gg-sans-2");
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  min-height: 100dvh;
+  background-color: hsl(240, 5%, 7%);
+  font-family: "gg sans", sans-serif;
+  color: hsl(0, 0%, 70%);
+  display: flex;
+}
+body ul, body ol {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+body img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-shape-margin: 1rem;
+}
+
+.channel-list {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 0.6rem;
+  padding-block: 0.6rem;
+  width: 70px;
+  height: 100%;
+  background: hsl(240, 5%, 7%);
+  border-right: 1px solid hsl(240, 4%, 14%);
+  max-height: 100dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.channel-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+.channel-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+.channel-list::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.channel-list::-webkit-scrollbar-corner {
+  background: transparent;
+}
+.channel-list .devider {
+  display: block;
+  width: 50%;
+  min-height: 1px;
+  background: hsl(240, 4%, 14%);
+}
+.channel-list .channel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.channel-list .channel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  border-radius: 0 0.6rem 0.6rem 0;
+  height: 7px;
+  transition: height 0.2s ease;
+}
+.channel-list .channel.add-channel::before, .channel-list .channel.explore::before {
+  content: none;
+}
+.channel-list .channel.selected::before, .channel-list .channel.notifications::before {
+  background: hsl(0, 0%, 98%);
+}
+.channel-list .channel.selected::before {
+  height: 100%;
+}
+.channel-list .channel.notifications::before {
+  height: 7px;
+}
+.channel-list .channel.hovered::before {
+  background: hsl(0, 0%, 98%);
+  height: 50%;
+}
+.channel-list .channel.private-messages.selected .channel-icon {
+  background: hsl(235, 86%, 65%);
+  transition: background 0.2s ease;
+}
+.channel-list .channel.private-messages .channel-icon, .channel-list .channel.add-channel .channel-icon, .channel-list .channel.explore .channel-icon {
+  transition: background 0.2s ease;
+}
+.channel-list .channel.private-messages .channel-icon:hover, .channel-list .channel.add-channel .channel-icon:hover, .channel-list .channel.explore .channel-icon:hover {
+  background: hsl(235, 86%, 65%);
+  transition: background 0.2s ease;
+}
+.channel-list .channel .channel-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  aspect-ratio: 1;
+  width: 55%;
+  border-radius: 0.7rem;
+  background: hsl(240, 2%, 12%);
+  cursor: pointer;
+}
+.channel-list .channel .channel-icon i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: hsl(0, 0%, 98%);
+}
+.channel-list .channel .channel-icon i.fa-discord {
+  font-size: 1.2rem;
+}
+.channel-list .channel .channel-icon i.fa-circle-plus, .channel-list .channel .channel-icon i.fa-compass {
+  font-size: 1.1rem;
+}/*# sourceMappingURL=main.css.map */
