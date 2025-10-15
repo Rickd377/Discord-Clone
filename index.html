@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-regular.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
 
+  <link rel="icon" href="./assets/discord-light.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="./assets/discord-dark.png" media="(prefers-color-scheme: dark)">
+
   <link rel="stylesheet" href="./styles/dist/css/main.css">
 
   <title>Discord</title>
@@ -21,61 +24,16 @@
   
   <div class="channel-sidebar">
     <div class="channel-list">
-      <div class="channel private-messages">
+      <div class="channel private-messages selected">
         <div class="channel-icon">
           <i class="fa-brands fa-discord"></i>
         </div>
       </div>
       <div class="devider"></div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel">
-        <div class="channel-icon"></div>
-      </div>
-      <div class="channel notifications">
-        <div class="channel-icon"></div>
-      </div>
       <div class="channel add-channel">
-        <div class="channel-icon">
+        <button class="channel-icon" popovertarget="createChannelPopup">
           <i class="fa-solid fa-circle-plus"></i>
-        </div>
+        </button>
       </div>
       <div class="channel explore">
         <div class="channel-icon">
@@ -84,7 +42,23 @@
       </div>
     </div>
   </div>
+
+  <div class="channel-tabs">
+    <div class="channel-name">
+      <span>MyMonsterVault</span>
+      <i class="fa-regular fa-angle-down"></i>
+    </div>
+  </div>
   
-  <script src="./js/main.js"></script>
+  <!-- popup section -->
+  <div popover="auto" id="createChannelPopup" class="popup-content">
+    <h3>Create Channel</h3>
+    <form class="channel-form">
+      <input type="text" placeholder="Channel name" required>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+
+  <script src="./js/channels.js"></script>
 </body>
 </html>

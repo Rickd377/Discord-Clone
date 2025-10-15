@@ -1,0 +1,35 @@
+.channel-tabs {
+  $_tab-hover: hsl(240, 3%, 12%);
+
+  height: 100dvh;
+  width: 360px;
+  border: 1px solid $border;
+  border-top-left-radius: 10px;
+  background: $bg-1;
+  overflow: clip;
+  
+  .channel-name {
+    @include flex(space-between);
+    background: inherit;
+    width: 100%;
+    height: 50px;
+    padding-inline: 1rem;
+    border-bottom: 1px solid $border;
+    transition: background .2s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: $_tab-hover;
+      transition: background .2s ease;
+    }
+
+    span {
+      color: $white;
+    }
+
+    i {
+      color: lightgray;
+      font-size: .9rem;
+    }
+  }
+}

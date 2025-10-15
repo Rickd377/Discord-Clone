@@ -1,0 +1,46 @@
+{
+  "channels": [
+    {
+      "id": "server1",
+      "name": "Gaming Server",
+      "image": "./assets/pfp-01.png",
+      "notifications": false
+    },
+    {
+      "id": "server2",
+      "name": "Study Group",
+      "image": "./assets/pfp-02.png",
+      "notifications": true
+    },
+    {
+      "id": "server3",
+      "name": "Project Team",
+      "image": "./assets/pfp-03.png",
+      "notifications": false
+    },
+    {
+      "id": "server4",
+      "name": "Friend Group",
+      "image": "./assets/pfp-04.png",
+      "notifications": false
+    },
+    {
+      "id": "server5",
+      "name": "Tech Community",
+      "image": "./assets/pfp-05.png",
+      "notifications": true
+    },
+    {
+      "id": "server6",
+      "name": "Music Club",
+      "image": "./assets/pfp-06.png",
+      "notifications": false
+    },
+    {
+      "id": "server7",
+      "name": "Art Gallery",
+      "image": "./assets/pfp-07.png",
+      "notifications": true
+    }
+  ]
+}

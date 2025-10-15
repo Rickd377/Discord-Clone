@@ -1,12 +1,13 @@
 .channel-list {
+  $_sidebar-gap: .62rem;
+
   @include flex(start, center, column);
   @include hideScroll;
-  gap: .6rem;
-  padding-block: .6rem;
+  gap: $_sidebar-gap;
+  padding-block: $_sidebar-gap;
   width: 70px;
   height: 100%;
   background: $bg-1;
-  border-right: 1px solid $border;
 
   max-height: 100dvh;
   overflow-y: auto;
@@ -29,7 +30,7 @@
       position: absolute;
       left: 0;
       width: 3px;
-      border-radius: 0 .6rem .6rem 0;
+      border-radius: 0 $_sidebar-gap $_sidebar-gap 0;
       height: 7px;
       transition: height .2s ease;
     }
@@ -57,7 +58,8 @@
       height: 50%;
     }
 
-    &.private-messages.selected .channel-icon {
+    &.private-messages.selected .channel-icon,
+    &.explore.selected .channel-icon {
       background: hsl(235, 86%, 65%);
       transition: background .2s ease;
     }
@@ -71,6 +73,10 @@
         background: hsl(235, 86%, 65%);
         transition: background .2s ease;
       }
+
+      &:active {
+        transform: translateY(1px);
+      }
     }
 
     .channel-icon {
@@ -80,10 +86,15 @@
       width: 55%;
       border-radius: .7rem;
       background: hsl(240, 2%, 12%);
+      border: none;
+      overflow: clip;
       cursor: pointer;
 
+      img {
+        object-fit: cover;
+      }
+
       i {
-        @include flex;
         color: $white;
 
         &.fa-discord {
@@ -97,4 +108,22 @@
       }
     }
   }
+}
+
+#createChannelPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#createChannelPopup:popover-open {
+  background: $popup-container;
+  border: 1px solid $popup-border;
+  padding: 1rem 24px;
+  border-radius: 10px;
+}
+
+#createChannelPopup::backdrop {
+  background: rgba(0, 0, 0, 0.7);
 }
