@@ -68,7 +68,7 @@
                   content: '';
                   position: absolute;
                   left: calc(100% - 8px);
-                  height: 40px;
+                  height: 35px;
                   width: 12px;
                 }
               
@@ -85,7 +85,7 @@
                 .mute-content {
                   position: absolute;
                   left: calc(100% + 4px);
-                  top: 4px;
+                  top: 8px;
                   @include flex(start, center, column);
                   width: 190px;
                   border-radius: 8px;
@@ -155,8 +155,8 @@
 
             .devider {
               height: 1px;
-              width: calc(100% - 10px);
-              margin-block: 8px;
+              width: calc(100% - 8px);
+              margin: 8px auto;
               background: $popup-border;
             }
           }
