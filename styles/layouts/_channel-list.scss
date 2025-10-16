@@ -60,7 +60,7 @@
 
     &.private-messages.selected .channel-icon,
     &.explore.selected .channel-icon {
-      background: hsl(235, 86%, 65%);
+      background: $discord-accent;
       transition: background .2s ease;
     }
     
@@ -70,7 +70,7 @@
       transition: background .2s ease;
 
       &:hover {
-        background: hsl(235, 86%, 65%);
+        background: $discord-accent;
         transition: background .2s ease;
       }
 

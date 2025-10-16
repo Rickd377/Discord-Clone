@@ -188,7 +188,7 @@ body img {
   color: hsl(0, 0%, 98%);
 }
 .channel-tabs .channel-name i {
-  color: lightgray;
+  color: hsl(253, 6%, 68%);
   font-size: 0.9rem;
 }
 
@@ -234,18 +234,171 @@ body img {
   align-items: center;
   flex-direction: row;
   gap: 1.25rem;
+  height: 100%;
 }
-.main-chat .topbar .right i {
-  color: hsl(247, 4%, 60%);
+.main-chat .topbar .right .dropdown-topbar {
+  position: relative;
+  height: 100%;
+}
+.main-chat .topbar .right .dropdown-topbar.threads .dropdown-content {
+  width: 480px;
+  display: none;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 190px;
+  display: none;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 8px;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option:hover {
+  background: hsl(240, 4%, 20%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute::after {
+  content: "";
+  position: absolute;
+  left: calc(100% - 8px);
+  height: 40px;
+  width: 12px;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute:hover .mute-content {
+  display: flex !important;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute .mute-btn {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute .mute-content {
+  position: absolute;
+  left: calc(100% + 4px);
+  top: 4px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  width: 190px;
+  border-radius: 8px;
+  padding: 8px;
+  background: hsl(240, 6%, 17%);
+  border: 1px solid hsl(240, 5%, 22%);
+  display: none;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute .mute-content span {
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px 8px;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute .mute-content span:hover {
+  background: hsl(240, 4%, 20%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option span {
+  font-size: 0.9rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option .span-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 8px;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option .span-wrapper span.small-span {
+  font-size: 0.8rem;
+  color: hsl(240, 4%, 68%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option input[type=radio] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  aspect-ratio: 1;
+  height: 20px;
+  border: 1px solid hsl(234, 4%, 45%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option input[type=radio]:checked {
+  background: hsl(0, 0%, 98%);
+  border: 6px solid hsl(235, 86%, 65%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute i {
+  color: hsl(232, 3%, 53%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .button-option.mute:hover i {
+  color: hsl(0, 0%, 98%);
+}
+.main-chat .topbar .right .dropdown-topbar.notification-settings .dropdown-content .devider {
+  height: 1px;
+  width: calc(100% - 10px);
+  margin-block: 8px;
+  background: hsl(248, 6%, 24%);
+}
+.main-chat .topbar .right .dropdown-topbar.pinned-messages .dropdown-content {
+  width: 420px;
+  display: none;
+}
+.main-chat .topbar .right .dropdown-topbar.clicked .dropdown-btn i {
+  color: hsl(0, 0%, 98%);
+}
+.main-chat .topbar .right .dropdown-topbar.clicked .dropdown-btn:hover i {
+  color: hsl(0, 0%, 98%);
+}
+.main-chat .topbar .right .dropdown-topbar.clicked .dropdown-content {
+  display: block;
+}
+.main-chat .topbar .right .dropdown-topbar .dropdown-btn {
+  height: 100%;
+  background: none;
+  border: none;
   transition: color 0.2s ease;
   cursor: pointer;
 }
-.main-chat .topbar .right i:hover {
+.main-chat .topbar .right .dropdown-topbar .dropdown-btn:hover i {
   color: hsl(253, 6%, 68%);
   transition: color 0.2s ease;
 }
+.main-chat .topbar .right .dropdown-topbar .dropdown-content {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+  top: 100%;
+  background: hsl(240, 6%, 17%);
+  border: 1px solid hsl(240, 5%, 22%);
+  color: hsl(0, 0%, 98%);
+  font-family: "gg sans Medium", sans-serif;
+  box-shadow: 0 10px 20px hsla(0, 0%, 0%, 0.2);
+  padding: 8px;
+  border-radius: 8px;
+}
+.main-chat .topbar .right i {
+  font-size: 1rem;
+  color: hsl(247, 4%, 60%);
+}
 .main-chat .topbar .right i.fa-reel {
   transform: rotate(45deg);
+}
+.main-chat .topbar .right .members-btn {
+  cursor: pointer;
+}
+.main-chat .topbar .right .members-btn:hover i {
+  color: hsl(253, 6%, 68%);
+  transition: color 0.2s ease;
 }
 .main-chat .topbar .right .search {
   position: relative;

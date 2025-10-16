@@ -1,0 +1,273 @@
+.main-chat {
+  position: relative;
+  flex: 1;
+  background: $bg-2;
+
+  .topbar {
+    @include flex(space-between);
+    position: sticky;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid $border;
+    padding-inline: 1rem;
+
+    .left {
+      @include flex;
+      gap: .62rem;
+      
+      i {
+        color: hsl(300, 1%, 66%);
+        font-size: 1rem;
+      }
+      
+      .channel-tab-name {
+        color: $white;
+        font-family: $gg-sans-medium;
+        font-size: .97rem;
+        user-select: none;
+      }
+    }
+    
+    .right {
+      @include flex;
+      gap: 1.25rem;
+      height: 100%;
+
+      .dropdown-topbar {
+        position: relative;
+        height: 100%;
+
+        &.threads {
+          .dropdown-content {
+            width: 480px;
+            display: none;
+          }
+        }
+
+        &.notification-settings {
+          .dropdown-content {
+            @include flex(start, center, column);
+            width: 190px;
+            display: none;
+
+            .button-option {
+              @include flex(space-between);
+              padding: 10px 8px;
+              width: 100%;
+              border-radius: 4px;
+              cursor: pointer;
+
+              &:hover {
+                background: hsl(240, 4%, 20%);
+              }
+
+              &.mute {
+
+                &::after {
+                  content: '';
+                  position: absolute;
+                  left: calc(100% - 8px);
+                  height: 40px;
+                  width: 12px;
+                }
+              
+                &:hover .mute-content {
+                  display: flex !important;
+                }
+
+                .mute-btn {
+                  position: relative;
+                  @include flex(space-between);
+                  width: 100%;
+                }
+
+                .mute-content {
+                  position: absolute;
+                  left: calc(100% + 4px);
+                  top: 4px;
+                  @include flex(start, center, column);
+                  width: 190px;
+                  border-radius: 8px;
+                  padding: 8px;
+                  background: hsl(240, 6%, 17%);
+                  border: 1px solid hsl(240, 5%, 22%);
+                  display: none;
+
+                  span {
+                    width: 100%;
+                    border-radius: 4px;
+                    padding: 10px 8px;
+
+                    &:hover {
+                      background: hsl(240, 4%, 20%);
+                    }
+                  }
+                }
+              }
+
+              span {
+                font-size: .9rem;
+                user-select: none
+              }
+
+              .span-wrapper {
+                @include flex(start, start, column);
+                gap: 8px;
+
+                span {
+                  &.small-span {
+                    font-size: .8rem;
+                    color: hsl(240, 4%, 68%);
+                  }
+                }
+              }
+
+              input[type="radio"] {
+                appearance: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+
+                aspect-ratio: 1;
+                height: 20px;
+                border: 1px solid hsl(234, 4%, 45%);
+                border-radius: 50%;
+                cursor: pointer;
+
+                &:checked {
+                  background: $white;
+                  border: 6px solid $discord-accent;
+                }
+              }
+
+              &.mute {
+                i {
+                  color: hsl(232, 3%, 53%);
+                }
+
+                &:hover {
+                  i {
+                    color: $white;
+                  }
+                }
+              }
+            }
+
+            .devider {
+              height: 1px;
+              width: calc(100% - 10px);
+              margin-block: 8px;
+              background: $popup-border;
+            }
+          }
+        }
+
+        &.pinned-messages {
+          .dropdown-content {
+            width: 420px;
+            display: none;
+          }
+        }
+
+        &.clicked {
+          .dropdown-btn {
+            i {
+              color: $white;
+            }
+
+            &:hover i {
+              color: $white;
+            }
+          }
+
+          .dropdown-content {
+            display: block;
+          }
+        }
+
+        .dropdown-btn {
+          height: 100%;
+          background: none;
+          border: none;
+          transition: color .2s ease;
+          cursor: pointer;
+
+          &:hover {
+            i {
+              color: hsl(253, 6%, 68%);
+              transition: color .2s ease;
+            }
+          }
+        }
+
+        .dropdown-content {
+          position: absolute;
+          z-index: 999;
+          right: 0;
+          top: 100%;
+          background: hsl(240, 6%, 17%);
+          border: 1px solid hsl(240, 5%, 22%);
+          color: $white;
+          font-family: $gg-sans-medium;
+          box-shadow: 0 10px 20px $box-shadow;
+          padding: 8px;
+          border-radius: 8px;
+        }
+      }
+
+      i {
+        font-size: 1rem;
+        color: hsl(247, 4%, 60%);
+
+        &.fa-reel {
+          transform: rotate(45deg);
+        }
+      }
+
+      .members-btn {
+        cursor: pointer;
+
+        &:hover {
+          i {
+            color: hsl(253, 6%, 68%);
+            transition: color .2s ease;
+          }
+        }
+      }
+
+      .search {
+        position: relative;
+        
+        input {
+          font-family: $gg-sans-medium !important;
+          width: 240px;
+          border: 1px solid hsl(240, 6%, 20%);
+          background: hsl(240, 9%, 10%);
+          border-radius: .55rem;
+          padding: .4rem .5rem;
+          outline: none;
+          color: $white;
+
+          &::placeholder {
+            color: hsl(247, 5%, 38%);
+          }
+        }
+
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration {
+          display: none;
+        }
+
+        i {
+          position: absolute;
+          top: 50%;
+          right: .5rem;
+          transform: translateY(-50%);
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}

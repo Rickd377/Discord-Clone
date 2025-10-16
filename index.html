@@ -56,10 +56,76 @@
         <span class="channel-tab-name">documents</span>
       </div>
       <div class="right">
-        <i class="fa-solid fa-reel"></i>
-        <i class="fa-solid fa-bell"></i>
-        <i class="fa-sharp fa-solid fa-thumbtack-angle"></i>
-        <i class="fa-solid fa-users"></i>
+        <div class="dropdown-topbar threads">
+          <button class="dropdown-btn">
+            <i class="fa-solid fa-reel threads-icon"></i>
+          </button>
+          <div class="dropdown-content">
+            threads content
+          </div>
+        </div>
+
+        <div class="dropdown-topbar notification-settings">
+          <button class="dropdown-btn">
+            <i class="fa-solid fa-bell notifications-icon"></i>
+          </button>
+          <div class="dropdown-content">
+
+            <div class="button-option mute">
+              <div class="mute-btn">
+                <span class="mute-span">Mute Channel</span>
+                <i class="fa-regular fa-angle-right"></i>
+              </div>
+              <div class="mute-content">
+                <span>For 15 minutes</span>
+                <span>For 1 hour</span>
+                <span>For 3 hours</span>
+                <span>For 8 hours</span>
+                <span>For 24 hours</span>
+                <span>Until I turn it back on</span>
+              </div>
+            </div>
+
+            <div class="devider"></div>
+
+            <label class="button-option">
+              <div class="span-wrapper">
+                <span>Use Category Default</span>
+                <span class="small-span">All Messages</span>
+              </div>
+              <input type="radio" name="notification-radio">
+            </label>
+
+            <label class="button-option">
+              <span>All Messages</span>
+              <input type="radio" name="notification-radio">
+            </label>
+
+            <label class="button-option">
+              <span>Only @mentions</span>
+              <input type="radio" name="notification-radio">
+            </label>
+
+            <label class="button-option">
+              <span>Nothing</span>
+              <input type="radio" name="notification-radio">
+            </label>
+
+          </div>
+        </div>
+
+        <div class="dropdown-topbar pinned-messages">
+          <button class="dropdown-btn">
+            <i class="fa-sharp fa-solid fa-thumbtack-angle pinned-messages-icon"></i>
+          </button>
+          <div class="dropdown-content">
+            pinned messages content
+          </div>
+        </div>
+
+        <div class="members-btn">
+          <i class="fa-solid fa-users members-icon"></i>
+        </div>
         <div class="search">
           <input type="search" placeholder="Search">
           <i class="fa-regular fa-magnifying-glass"></i>
@@ -69,7 +135,7 @@
   </div>
   
   <!-- popup section -->
-  <div popover="auto" id="createChannelPopup" class="popup-content">
+  <div popover="auto" id="createChannelPopup">
     <h3>Create Channel</h3>
     <form class="channel-form">
       <input type="text" placeholder="Channel name" required>
@@ -78,5 +144,6 @@
   </div>
 
   <script src="./js/channels.js"></script>
+  <script src="./js/topchatbar.js"></script>
 </body>
 </html>
